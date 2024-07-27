@@ -42,6 +42,7 @@ classes, _      = get_classes(classes_path)
 #-------------------------------------------------------#
 photo_nums  = np.zeros(len(VOCdevkit_sets))
 nums        = np.zeros(len(classes))
+print(photo_nums, nums)
 def convert_annotation(year, image_id, list_file):
     in_file = open(os.path.join(VOCdevkit_path, 'VOC%s/Annotations/%s.xml'%(year, image_id)), encoding='utf-8')
     tree=ET.parse(in_file)
@@ -111,6 +112,7 @@ if __name__ == "__main__":
         print("Generate 2007_train.txt and 2007_val.txt for train.")
         type_index = 0
         for year, image_set in VOCdevkit_sets:
+            
             image_ids = open(os.path.join(VOCdevkit_path, 'VOC%s/ImageSets/Main/%s.txt'%(year, image_set)), encoding='utf-8').read().strip().split()
             list_file = open('%s_%s.txt'%(year, image_set), 'w', encoding='utf-8')
             for image_id in image_ids:
