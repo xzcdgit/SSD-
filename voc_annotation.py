@@ -117,7 +117,6 @@ if __name__ == "__main__":
             list_file = open('%s_%s.txt'%(year, image_set), 'w', encoding='utf-8')
             for image_id in image_ids:
                 list_file.write('%s/VOC%s/JPEGImages/%s.jpg'%(os.path.abspath(VOCdevkit_path), year, image_id))
-
                 convert_annotation(year, image_id, list_file)
                 list_file.write('\n')
             photo_nums[type_index] = len(image_ids)
