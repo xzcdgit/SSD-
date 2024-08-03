@@ -26,7 +26,7 @@ classes_path        = 'model_data/voc_classes.txt'
 #   train_percent用于指定(训练集+验证集)中训练集与验证集的比例，默认情况下 训练集:验证集 = 9:1
 #   仅在annotation_mode为0和1的时候有效
 #--------------------------------------------------------------------------------------------------------------------------------#
-trainval_percent    = 0.9
+trainval_percent    = 1
 train_percent       = 0.9
 #-------------------------------------------------------#
 #   指向VOC数据集所在的文件夹
@@ -112,7 +112,6 @@ if __name__ == "__main__":
         print("Generate 2007_train.txt and 2007_val.txt for train.")
         type_index = 0
         for year, image_set in VOCdevkit_sets:
-            
             image_ids = open(os.path.join(VOCdevkit_path, 'VOC%s/ImageSets/Main/%s.txt'%(year, image_set)), encoding='utf-8').read().strip().split()
             list_file = open('%s_%s.txt'%(year, image_set), 'w', encoding='utf-8')
             for image_id in image_ids:

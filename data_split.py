@@ -4,8 +4,8 @@ import sys
 from tqdm import tqdm
 directory_path = os.path.dirname(os.path.abspath(__file__))
 
-trainval_percent = 0.9#验证集和训练集占的百分比
-train_percent = 0.8#训练集占的百分比
+trainval_percent = 1#验证集和训练集占的百分比
+train_percent = 0.85#训练集占的百分比
 xmlfilepath = directory_path + r'\VOCdevkit\VOC2007\Annotations'#Annotation文件夹所在位置
 txtsavepath = directory_path + r'\VOC2007\ImageSets\Main'#ImageSets文件下的Main文件夹所在位置
 total_xml = os.listdir(xmlfilepath)
